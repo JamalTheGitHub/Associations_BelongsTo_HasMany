@@ -14,4 +14,29 @@ Once that is done, just leave it. Basically we just created a skeleton page that
 
 <h3>Step 3</h3>
 
-Creating the posts migration file that belongs to the user.
+Create a <strong>Post model</strong>. Inside the model, add the code
+
+    belongs_to :user
+
+Then create a posts migration file. It should look like as below;
+
+    class CreatePosts < ActiveRecord::Migration[5.2]
+      def change
+        create_table :posts do |t|
+          t.belongs_to :user, index: true
+          t.string :comments
+
+          t.timestamps
+        end
+      end
+    end
+
+A quick way of doing this is by entering in the terminal;
+
+    rails g model Post user:belongs_to comments:string
+
+After that, just go to the migration file and add <strong>index: true</strong> to the line where <strong>t.belongs_to :user</strong> as shown above.
+
+Now that we have created the migration file and migrated it, we also need to create a <strong>Posts controller</strong> with the action <strong>new</strong>. When that is done, go to <strong>routes.rb</strong> and add <strong>resources :posts</strong> in the file. This will allow rails to create useful restful routes that we can use later.
+
+Within the newly created <strong>Posts controller</strong>, inside the action <strong>new</strong>, add <strong>@post = Post.new</strong>.
