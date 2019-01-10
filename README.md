@@ -2,7 +2,7 @@
 This is about associations between <strong>One to Many</strong> OR <strong>Many to One</strong>. Think of it like <strong>Twitter</strong> where a <strong>user</strong> can <strong>have many posts</strong> BUT the posts can only <strong>belongs to the user</strong>.
 
 <h3>Step 1</h3>
-<u><strong>NOTE: For this tutorial, I have created a <strong>Home controller</strong> with the action <strong>index<strong> and made that my root.</strong></u>
+<u><strong>NOTE: For this tutorial, I have created a Home controller with the action index and made that my root.</strong></u>
 
 First create a functional login.
 
