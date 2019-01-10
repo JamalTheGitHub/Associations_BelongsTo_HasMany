@@ -1,0 +1,4 @@
+<% @posts.each do |p| %>
+<%= p.comments %> submitted by <%= p.user.name%>
+<br/>
+<% end %>
