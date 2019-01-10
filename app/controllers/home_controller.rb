@@ -3,5 +3,6 @@ class HomeController < ApplicationController
   end
 
   def show
+    @posts = Post.all
   end
 end
